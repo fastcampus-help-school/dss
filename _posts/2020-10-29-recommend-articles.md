@@ -30,7 +30,7 @@ author: 김희주, 최은비, 황지수
 - 독자가 읽었던 글과 유사한 매거진의 글 추천
 ### ◾ *Popular & Recent Articles*
 - 많은 독자들이 읽었으며, 최신에 등록된 글 추천
-### ◾ *Interest-based recommendation (collaborative filtering)*
+### ◾ *Similar Articles based on tastes(collaborative filtering)*
 - 태그리스트를 활용하여 유사 취향을 가진 독자와 작가를 찾음
 - tag 형태소 분석, 형태소 vector화 및 cosine 유사도를 통한 추천
 - 유사 취향 독자 10명, 작가 10명을 추출하여 읽거나 쓴 글 중 최근/인기글 순으로 최종 100개의 글 추천
@@ -44,7 +44,7 @@ author: 김희주, 최은비, 황지수
   - grouo3 : 종사자, 전문가, 크롤러 등으로 예상 (65편 이상)
 ### ◾ *Recommendation for each segment*
 - 그룹별 다른 방법을 활용하여 글 추천
-  - group1 : following based - magazine based - popularity based 순으로 추천하여 100개의 글 추천
-  - group2: interest-based 추천 방법을 사용하여 100개의 글을 추천
-  - group3: recent/popularity based 추천방법을 사용하여 100개의 글 추천
+  - group1 : following - magazine - Popular & Recent 순으로 추천하여 100개의 글 추천
+  - group2: Similar Articles based on tastes 방법을 사용하여 100개의 글을 추천
+  - group3: Popular & Recent 추천방법을 사용하여 100개의 글 추천
 
