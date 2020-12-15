@@ -9,8 +9,9 @@ image: >-
   https://user-images.githubusercontent.com/68367134/97185701-bbc1fe00-17e3-11eb-9d31-46d8ad0e3895.png
 optimized_image: >-
   https://user-images.githubusercontent.com/68367134/97185701-bbc1fe00-17e3-11eb-9d31-46d8ad0e3895.png
-category: finance
+category: Regression
 tags:
+  - regression
   - finance
 author: 이태헌, 김희주
 paginate: true
