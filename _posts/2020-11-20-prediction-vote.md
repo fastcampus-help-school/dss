@@ -4,10 +4,8 @@ layout: post
 title: 이사람, 투표했을까?!
 subtitle: 머신러닝 분류모델 개발 프로젝트
 description: 개인의 심리성향 테스트 답변과 인적사항 데이터로 국가선거 투표참여 여부 예측하기
-image: 
-https://user-images.githubusercontent.com/68367393/100457200-f7aef280-3104-11eb-899f-986c67794912.png
-optimized_image:
-https://user-images.githubusercontent.com/68367393/100457117-cdf5cb80-3104-11eb-881f-3e552161dfe8.png
+image: https://user-images.githubusercontent.com/68367393/100457200-f7aef280-3104-11eb-899f-986c67794912.png
+optimized_image: https://user-images.githubusercontent.com/68367393/100457117-cdf5cb80-3104-11eb-881f-3e552161dfe8.png
 category: ML
 tags:
   - ML
