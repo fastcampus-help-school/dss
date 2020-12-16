@@ -13,77 +13,63 @@ tags:
 author: 전진경, 최은비
 ---
 
-# Machine Learning을 활용한 소설 작가 분류모델
+## 여성인력 임금예측 프로젝트
+- 프로젝트 개요: 여성 패널 조사 자료를 활용한 여성인력 임금 예측
+- 참여인력: 전진경, 최은비
+- 주요 역할
+  - 전진경 :데이터 수집, EDA, 시각화, 전처리, 모델적용
+  - 최은비 :데이터 수집, EDA, 전처리, 모델적용, 문서정리
+  
+### 분석 결과
+---
+- 결과 개요
+  - 최종 활용 모델: RandomForest Regressor
+  - accuracy: RMSE 53 (단위 만원)
+  - 예측값과 실제값 사이 53만원 정도의 오차가 있을 수 있음을 의미함
+- 예측 예시
+![image](https://user-images.githubusercontent.com/67793544/99473563-26eb9400-298e-11eb-8efa-68801c4b73ca.png)
 
-## 프로젝트 개요
-----------------------------------------------------
+  - 예시1. 21세, 경력1년, 미혼, 비정규직 고졸 여성 : 108만원으로 예측
+  - 예시2. 30세, 경력5년, 기혼, 정규직, 대졸 여성 : 228만원으로 예측
 
-Machine Learning Algorithm 모델을 활용하여 작가 텍스트 데이터를 분석하여 test data의 작가 분류 및 예측
+- 한계점
+  - 설문 데이터로 임금 입력에 50만 단위로 응답이 집중됨을 확인 (정확한 급여 확인이 어려움)
+  - 급여 예측을 목적으로 수집된 데이터가 아니기 때문에 변수 선정이 제한적
+  - 경력을 최대한 반영하고자 하였으나, 직접 경력을 묻는 항목이 없어 여성인력의 경력공백이 제대로 반영되지 못함
+  
 
-- 주제 : 문체 분석 알고리즘 개발
-- 배경 : 작가의 글을 분석하여 특징 도출
-- 목적 : 작가 소설 속 문장 특징 도출 및 문장뭉치 분석을 통한 작가 예측
-- DATA 출처 : ACON 소설 작가 분류 AI 경진대회 Data 사용
-
-팀구성
->* 김형기 : TfidfVectorizer, 모델링, 토픽 모델링(LDA)
->* 여영웅 : 코사인 유사도, 유클리디안 유사도 및 머신러닝 학습
-
-## Process
------------------------------------------------------
-
-### 1. Text Data EDA
------------------------------------------------------
-> 형태소 및 작가 별 특징 분석
-
-<img src="https://user-images.githubusercontent.com/65877745/99362453-dd9c3580-28f6-11eb-942b-f66e2da11fc9.png" width="60%" height="60%" alt="process">
-작가별 Text 데이터 분포
-<img src="https://user-images.githubusercontent.com/65877745/99362501-eee54200-28f6-11eb-8f94-d4fbabfaa5b0.png" width="60%" height="60%" alt="process">
-Text 데이터 및 알파벳 길이 분포
-
-### 2. 유사도 측정
------------------------------------------------------
-
->- 유클라디안 거리 측정 : 두 벡터 사이의 거리를 구하는 방법
-
-<img src="https://user-images.githubusercontent.com/65877745/99362230-90b85f00-28f6-11eb-8f70-95cfe4f463e0.png" width="60%" height="60%" alt="process">
-
->- Cosine 유사도 측정 : 두 개의 벡터값에서 코사인 각도를 구하는 방식(방향성이 함께 포함되어 괜찮은 성능으로 알려짐)
-
-<img src="https://user-images.githubusercontent.com/65877745/99361918-27d0e700-28f6-11eb-95fd-916f8d5b5a5e.png" width="60%" height="60%" alt="process">
-
->- 각 유사도를 구하고 가장 유사하거나 거리가 가까운 문장을 찾아서 비교
-
-### 3. 모델링
------------------------------------------------------
-MultinomialNB 알고리즘을 base line 으로 설정하고 Text를 Tfidf-Vectorizer로 벡터화 후 다양한 머신러닝 분류 알고리즘을 적용
-
->1. LogisticRegression, MultinomialNB, RandomForestClassifier, DecisionTreeClassifier, AdaBoostClassifier, GradientBoostingClassifier,
-LGBMClassifier, KNeighborsClassifier, LinearSVC, XgBoost, RidgeClassifier,
-SGDClassifier 등 
-
-총 12개의 분류 알고리즘 적용 후 5개 가장 성능(Accuracy)이 높게 나온 5개 분류 모델 선정(LinearSVC, SGD Classifier, LogisticRegression, RidgeClassifier, Multinomial NB)
-
->2. 선정된 분류모델에 TF-IDF-parameter Tuning을 통해 parameter 값 설정
-
-<img src="https://user-images.githubusercontent.com/65877745/99364822-c874d600-28f9-11eb-89b6-48b55a30e710.png" width="60%" height="60%" alt="process">
-
->3. NLTK의 Stopwords에 예측이 틀린 Text Data 중 가장 빈도수가 높은 단어 추가하여 진행하였으나, Test ACC 3% 가량 하락
-
->4. 예측
-
-<img src="https://user-images.githubusercontent.com/65877745/99364654-92cfed00-28f9-11eb-960c-8d776869be72.png" width="60%" height="60%" alt="process">
-
-### 4. 시각화
------------------------------------------------------
->LDA(토픽 모델링)을 통한 시각화
-<img src="https://user-images.githubusercontent.com/65877745/99363235-d7f31f80-28f7-11eb-9627-a2b30a115bbe.png" width="60%" height="60%" alt="process">
-
-### 최종 결과
------------------------------------------------------
-<img src="https://user-images.githubusercontent.com/65877745/99363429-138de980-28f8-11eb-986e-753e6ed177e8.png" width="60%" height="60%" alt="process">
-
-### 추가 해결 과제
------------------------------------------------------
-
-1. 딥러닝 모델과의 성능 비교
+### 데이터 구성
+---
+- 데이터 출처: 여성가족패널
+- 데이터 항목 (일부 데이터 발췌 사용)
+  - 여성 개인용 (가족관계)
+    - 성장과정 및 학교생활
+    - 혼인 상태
+    - 첫 직장의 경험
+    - 자녀 및 부모님과의 관계
+  - 일자리용
+    - 현재의 경제활동
+    - 이전 일자리
+    
+### 분석 프로세스
+---
+- 데이터 전처리
+  - 결측치 확인 및 제거& 대체
+  - 노후 데이터 제거
+  - 경력 데이터 삽입
+  - 범주형 데이터 변환
+- 데이터 탐색
+  - 응답자 주요 특성 분석
+  - 변수간 관계 확인
+- 모델 Fit & 성능 확인
+  - 사용 모델
+    - OLS
+    - Linear Regressor
+    - DecisionTree Regressor
+    - RandomForest Regressor
+    - GradientBoosting Regressor
+    - XGBRegressor
+- 예측 모델 성능 향상
+  - 변수 변경 및 조정
+  - 최적 모델 도출
+  
