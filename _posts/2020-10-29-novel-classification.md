@@ -35,9 +35,9 @@ Machine Learning Algorithm 모델을 활용하여 작가 텍스트 데이터를 
 -----------------------------------------------------
 > 형태소 및 작가 별 특징 분석
 
-<img src="https://user-images.githubusercontent.com/65877745/99362453-dd9c3580-28f6-11eb-942b-f66e2da11fc9.png" width="60%" height="60%" alt="process"></img>
+<img src="https://user-images.githubusercontent.com/65877745/99362453-dd9c3580-28f6-11eb-942b-f66e2da11fc9.png" width="60%" height="60%" alt="process">
 작가별 Text 데이터 분포
-<img src="https://user-images.githubusercontent.com/65877745/99362501-eee54200-28f6-11eb-8f94-d4fbabfaa5b0.png" width="60%" height="60%" alt="process"></img>
+<img src="https://user-images.githubusercontent.com/65877745/99362501-eee54200-28f6-11eb-8f94-d4fbabfaa5b0.png" width="60%" height="60%" alt="process">
 Text 데이터 및 알파벳 길이 분포
 
 ### 2. 유사도 측정
@@ -45,11 +45,11 @@ Text 데이터 및 알파벳 길이 분포
 
 >- 유클라디안 거리 측정 : 두 벡터 사이의 거리를 구하는 방법
 
-<img src="https://user-images.githubusercontent.com/65877745/99362230-90b85f00-28f6-11eb-8f70-95cfe4f463e0.png" width="60%" height="60%" alt="process"></img>
+<img src="https://user-images.githubusercontent.com/65877745/99362230-90b85f00-28f6-11eb-8f70-95cfe4f463e0.png" width="60%" height="60%" alt="process">
 
 >- Cosine 유사도 측정 : 두 개의 벡터값에서 코사인 각도를 구하는 방식(방향성이 함께 포함되어 괜찮은 성능으로 알려짐)
 
-<img src="https://user-images.githubusercontent.com/65877745/99361918-27d0e700-28f6-11eb-95fd-916f8d5b5a5e.png" width="60%" height="60%" alt="process"></img>
+<img src="https://user-images.githubusercontent.com/65877745/99361918-27d0e700-28f6-11eb-95fd-916f8d5b5a5e.png" width="60%" height="60%" alt="process">
 
 >- 각 유사도를 구하고 가장 유사하거나 거리가 가까운 문장을 찾아서 비교
 
@@ -65,22 +65,22 @@ SGDClassifier 등
 
 >2. 선정된 분류모델에 TF-IDF-parameter Tuning을 통해 parameter 값 설정
 
-<img src="https://user-images.githubusercontent.com/65877745/99364822-c874d600-28f9-11eb-89b6-48b55a30e710.png" width="60%" height="60%" alt="process"></img>
+<img src="https://user-images.githubusercontent.com/65877745/99364822-c874d600-28f9-11eb-89b6-48b55a30e710.png" width="60%" height="60%" alt="process">
 
 >3. NLTK의 Stopwords에 예측이 틀린 Text Data 중 가장 빈도수가 높은 단어 추가하여 진행하였으나, Test ACC 3% 가량 하락
 
 >4. 예측
 
-<img src="https://user-images.githubusercontent.com/65877745/99364654-92cfed00-28f9-11eb-960c-8d776869be72.png" width="60%" height="60%" alt="process"></img>
+<img src="https://user-images.githubusercontent.com/65877745/99364654-92cfed00-28f9-11eb-960c-8d776869be72.png" width="60%" height="60%" alt="process">
 
 ### 4. 시각화
 -----------------------------------------------------
 >LDA(토픽 모델링)을 통한 시각화
-<img src="https://user-images.githubusercontent.com/65877745/99363235-d7f31f80-28f7-11eb-9627-a2b30a115bbe.png" width="60%" height="60%" alt="process"></img>
+<img src="https://user-images.githubusercontent.com/65877745/99363235-d7f31f80-28f7-11eb-9627-a2b30a115bbe.png" width="60%" height="60%" alt="process">
 
 ### 최종 결과
 -----------------------------------------------------
-<img src="https://user-images.githubusercontent.com/65877745/99363429-138de980-28f8-11eb-986e-753e6ed177e8.png" width="60%" height="60%" alt="process"></img>
+<img src="https://user-images.githubusercontent.com/65877745/99363429-138de980-28f8-11eb-986e-753e6ed177e8.png" width="60%" height="60%" alt="process">
 
 ### 추가 해결 과제
 -----------------------------------------------------
