@@ -22,6 +22,7 @@ author: 김희주, 최은비, 황지수
   - 프로젝트 목표 : 2018년 10월 ~ 2019년 3월 기간동안 등록된 글과 읽은 글에 대한 정보를 바탕으로 2019년 3월 시점에서 독자에게 글을 추천해주는 추천 시스템 개발
 
 ---
+
 >## 📌 추천 알고리즘
 ### ◾ *Articles of Following Author*
 - 전체 독자의 98%는 구독하고 있는 작가가 있음
@@ -39,6 +40,7 @@ author: 김희주, 최은비, 황지수
 - 유사 취향 독자 10명, 작가 10명을 추출하여 읽거나 쓴 글 중 최근/인기글 순으로 최종 100개의 글 추천
   - tf-idf vectorizer, Doc2vec 사용
 ---
+
 >## 📌 추천시스템 구성
 ### ◾ *Readers segmentation*
 - test 기간 동안 읽은 글의 수를 기준으로 3개의 그룹으로 구분
@@ -50,6 +52,7 @@ author: 김희주, 최은비, 황지수
   - group1 : following - magazine - Popular & Recent 순으로 추천하여 100개의 글 추천
   - group2: Similar Articles based on tastes 방법을 사용하여 100개의 글을 추천
   - group3: Popular & Recent 추천방법을 사용하여 100개의 글 추천
+  ---
 
 >## 📌 추천 결과 
 <p align="left"><img src="https://user-images.githubusercontent.com/67793544/101129214-88755900-3644-11eb-8bb6-0cb91bec1e8c.png" width="60%"></p>
