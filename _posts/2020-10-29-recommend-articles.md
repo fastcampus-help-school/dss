@@ -56,4 +56,3 @@ author: 김희주, 최은비, 황지수
 
 >## 📌 추천 결과 
 <p align="left"><img src="https://user-images.githubusercontent.com/67793544/101129214-88755900-3644-11eb-8bb6-0cb91bec1e8c.png" width="60%"></p>
-
